@@ -1,0 +1,10 @@
+<vbox style="padding: 5px;">
+    <style>
+        .button {
+            font-size: 20px;
+        }
+    </style>
+    <hbox>
+        <button text="Open" id="button1" style="color: red;" />
+    </hbox>    
+</vbox>
