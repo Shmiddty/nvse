@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-haxe": "cd src/lib && haxe compile.hxml && cd ../..",
     "preview": "vite preview"
   },
   "dependencies": {
