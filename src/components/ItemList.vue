@@ -3,21 +3,24 @@ import { computed } from 'vue';
 import items from "../store/Items.js";
 
 const props = defineProps({
-  selected: { type: Object },
+  selected: { type: Object, required: true },
   label: { type:String }
 });
 function filter(id, query, item) {
   const props = [
-    item.raw.name, 
+    item.raw.name,
+    item.raw.id,
     item.raw.category,
     item.raw.description, 
     ...item.raw.properties.map(p => p.stat)
-  ];
-  return props.some(p => p.includes(query));
+  ].map(s => s.toLowerCase());
+  return props.some(p => p.includes(query.toLowerCase()));
 }
+// TODO: move this to the store
+const itemmap = items.reduce((o, i) => (o[i.id] = i, o), {});
 const selectedId = computed({
   get() {
-    return props.selected.id;
+    return itemmap[props.selected.id] || { id:undefined, name:'' };
   },
   set(item) {
     props.selected.id = item.id;
@@ -34,7 +37,6 @@ const selectedId = computed({
     :items="items"
     item-title="name"
     item-value="id"
-    return-object="false"
     />
 </template>
 
