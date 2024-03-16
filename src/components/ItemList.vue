@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import items from "../store/Items.js";
+import { equipment as items, equipmentIdMap as itemmap } from "../store/Items.js";
 
 const props = defineProps({
   selected: { type: Object, required: true },
@@ -16,8 +16,6 @@ function filter(id, query, item) {
   ].map(s => s.toLowerCase());
   return props.some(p => p.includes(query.toLowerCase()));
 }
-// TODO: move this to the store
-const itemmap = items.reduce((o, i) => (o[i.id] = i, o), {});
 const selectedId = computed({
   get() {
     return itemmap[props.selected.id] || { id:undefined, name:'' };

@@ -1,5 +1,4 @@
 <script setup>
-import { computed, reactive } from 'vue';
 import Item from './Item.vue';
 const props = defineProps({
   index: { type: Number, required: true },

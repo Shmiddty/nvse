@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "build-pages": "vite build --base=/nvse/",
-    "build-haxe": "cd src/lib && haxe compile.hxml -D shallow-expose && echo 'export default Hx;' >> ./js/hx.js && cd ../..",
+    "build-data": "cd lib/nv/ && bash extract.sh && cd ../..",
+    "build-haxe": "cd lib/hx/ && haxe compile.hxml -D shallow-expose && echo 'export default Hx;' >> ./index.js && cd ../..",
     "preview": "vite preview"
   },
   "dependencies": {
