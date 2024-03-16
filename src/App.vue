@@ -1,4 +1,5 @@
 <script setup>
+import Hx from './lib/js/hx'
 import { reactive, computed } from 'vue'
 import InventoryItem from './components/InventoryItem.vue';
 
