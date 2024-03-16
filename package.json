@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/nvse/",
+    "build": "vite build",
+    "build-pages": "vite build --base=/nvse/",
     "build-haxe": "cd src/lib && haxe compile.hxml -D shallow-expose && echo 'export default Hx;' >> ./js/hx.js && cd ../..",
     "preview": "vite preview"
   },
