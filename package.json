@@ -8,6 +8,7 @@
     "build": "vite build",
     "build-pages": "vite build --base=/nvse/",
     "build-data": "cd lib/nv/ && bash extract.sh && cd ../..",
+    "build-icons": "cd lib/nv/ && bash buildcss.sh && cd ../..",
     "build-haxe": "cd lib/hx/ && haxe compile.hxml -D shallow-expose && echo 'export default Hx;' >> ./index.js && cd ../..",
     "preview": "vite preview"
   },

@@ -35,7 +35,7 @@ const selectedId = computed({
     :items="items"
     item-title="name"
     item-value="id"
-    />
+  />
 </template>
 
 <style scoped>
