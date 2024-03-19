@@ -14,7 +14,11 @@ const props = defineProps({
 <template>
   <v-row>
     <v-col cols="3" align-self="center">
-      <ItemIcon size="48" :icon="itemmap[item.id]?.icon" />
+      <ItemIcon
+        size="48"
+        :rarity="itemmap[item.id]?.rarity"
+        :icon="itemmap[item.id]?.icon"
+      />
     </v-col>
     <v-col cols="9">
       <ItemList :label="label" :selected="item" />

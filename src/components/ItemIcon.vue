@@ -4,10 +4,13 @@ import { computed } from 'vue';
 
 const props = defineProps({
   icon: { type: String, required: true },
+  rarity: { type: Number, required: false },
   size: { type: String }
 })
 const className = computed(() => 
-  'nvicon nvicon-' + props.icon + ' nvicon-' + (props.size || "native") 
+  'nvicon nvicon-' + props.icon +
+  ' nvicon-' + (props.size || "native") +
+  ' nvicon-rarity' + (props.rarity || 0)
 );
 </script>
 
@@ -15,16 +18,44 @@ const className = computed(() =>
   <i :class="className" />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .nvicon {
   display:inline-block;
-  position:relative;
 }
 .nvicon:before {
-  position:absolute;
-  top:-8px;
-  left:-8px;
 }
+
+$cmn: rgba(0,0,0,0);
+$uncmn: blue;
+$rare: yellow;
+$lgnd: #c50;
+$uniq: green;
+$ols: 1px;
+.nvicon-rarity1 {
+  filter: drop-shadow(-$ols (-$ols) 0px $uncmn)
+          drop-shadow($ols $ols 0px $uncmn)
+          drop-shadow(-$ols $ols 0px $uncmn)
+          drop-shadow($ols (-$ols) 0px $uncmn)
+}
+.nvicon-rarity2 {
+  filter: drop-shadow(-$ols (-$ols) 0px $rare)
+          drop-shadow($ols $ols 0px $rare)
+          drop-shadow(-$ols $ols 0px $rare)
+          drop-shadow($ols (-$ols) 0px $rare)
+}
+.nvicon-rarity3 {
+  filter: drop-shadow(-$ols (-$ols) 0px $lgnd)
+          drop-shadow($ols $ols 0px $lgnd)
+          drop-shadow(-$ols $ols 0px $lgnd)
+          drop-shadow($ols (-$ols) 0px $lgnd)
+}
+.nvicon-rarity4 {
+  filter: drop-shadow(-$ols (-$ols) 0px $uniq)
+          drop-shadow($ols $ols 0px $uniq)
+          drop-shadow(-$ols $ols 0px $uniq)
+          drop-shadow($ols (-$ols) 0px $uniq)
+}
+
 .nvicon-native,
 .nvicon-16 {
   width: 16px;
