@@ -33,25 +33,25 @@ $uniq: green;
 $ols: 1px;
 .nvicon-rarity1 {
   filter: drop-shadow(-$ols (-$ols) 0px $uncmn)
-          drop-shadow($ols $ols 0px $uncmn)
+          drop-shadow(2*$ols 2*$ols 0px $uncmn)
           drop-shadow(-$ols $ols 0px $uncmn)
           drop-shadow($ols (-$ols) 0px $uncmn)
 }
 .nvicon-rarity2 {
   filter: drop-shadow(-$ols (-$ols) 0px $rare)
-          drop-shadow($ols $ols 0px $rare)
+          drop-shadow(2*$ols 2*$ols 0px $rare)
           drop-shadow(-$ols $ols 0px $rare)
           drop-shadow($ols (-$ols) 0px $rare)
 }
 .nvicon-rarity3 {
   filter: drop-shadow(-$ols (-$ols) 0px $lgnd)
-          drop-shadow($ols $ols 0px $lgnd)
+          drop-shadow(2*$ols 2*$ols 0px $lgnd)
           drop-shadow(-$ols $ols 0px $lgnd)
           drop-shadow($ols (-$ols) 0px $lgnd)
 }
 .nvicon-rarity4 {
   filter: drop-shadow(-$ols (-$ols) 0px $uniq)
-          drop-shadow($ols $ols 0px $uniq)
+          drop-shadow(2*$ols 2*$ols 0px $uniq)
           drop-shadow(-$ols $ols 0px $uniq)
           drop-shadow($ols (-$ols) 0px $uniq)
 }
