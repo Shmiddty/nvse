@@ -21,7 +21,7 @@ const selectedId = computed({
     return itemmap[props.selected.id] || { id:undefined, name:'' };
   },
   set(item) {
-    props.selected.id = item.id;
+    props.selected.id = item?.id;
   }
 });
 </script>

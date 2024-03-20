@@ -10,7 +10,13 @@ function mergeStat(a, b) {
     value
   };
 }
+function scale(prop, levels) {
+  // return (val * M.pow(1.20, M.min(100, levels)));
+  if (["health", "damage"].includes(prop.stat))
+    return prop.base + ((0.1 * levels) * prop.base);
 
+  return prop.base + prop.increment * levels;
+}
 const props = defineProps({
   item: { type: Object, required: true }
 });
@@ -19,13 +25,13 @@ const props = defineProps({
 const mergedStats = computed(() => {
   const itemStats = equipmentById[props.item.id]?.properties?.reduce(
   (o, p) => (o[p.mode][p.stat] = {
-    value: p.base + p.increment * props.item.quality,
+    value: scale(p, props.item.quality),
     type: p.type,
     valence: p.valence
   }, o), [{},{},{}]) ?? [{},{},{}];
   const meldStats = equipmentById[props.item.meld?.id]?.properties?.reduce(
   (o, p) => (o[p.mode][p.stat] = {
-    value: p.base + p.increment * props.item.meld.quality,
+    value: scale(p, props.item.meld.quality),
     type: p.type,
     valence: p.valence
   }, o), [{},{},{}]) ?? [{},{},{}];
