@@ -76,7 +76,7 @@ const output = computed(() =>
     <v-main>
       <v-container :hidden="!model.data" transition="fade-transition">
         <v-row dense>
-          <v-col cols="12" xxl="8" xl="8" lg="8" md="8" sm="12">
+          <v-col cols="12" xxl="8" xl="8" lg="8" md="7" sm="12">
             <v-card title="Resources">
               <v-card-text>
                 <v-row dense>
@@ -134,11 +134,11 @@ const output = computed(() =>
               </v-card-text>
             </v-card>
           </v-col>
-          <v-col cols="12" xxl="4" xl="4" lg="4" md="4" sm="12">
+          <v-col cols="12" xxl="4" xl="4" lg="4" md="5" sm="12">
             <!-- TODO: move to component -->
             <v-card title="Equipment">
               <v-card-text>
-                <v-row dense>
+                <v-row dense class="eqgrid">
                   <v-col
                     cols="3"
                     class="eqslot"
@@ -178,8 +178,18 @@ const output = computed(() =>
   background: inherit;
   color: inherit;
 }
+.eqgrid {
+  width:288px; /* this is bad */
+  margin:auto;
+}
 .eqslot {
   text-align: center;
+  background:#333;
+  border:solid 1px #222;
+  border-radius:10%;
+}
+.eqslot:has([aria-expanded="true"]) {
+  background: #357;
 }
 [data-index="4"],
 [data-index="5"],
@@ -192,13 +202,13 @@ const output = computed(() =>
 [data-index="10"] ,
 [data-index="11"] {
   order:25;
-  margin-top: 2em;
+  margin-top: .5em;
 }
 
 [data-index="12"] ,
 [data-index="13"] ,
 [data-index="14"] ,
 [data-index="15"] {
-  margin-top: 2em;
+  margin-top: .5em;
 }
 </style>
