@@ -79,6 +79,7 @@ const menu = ref(false);
 <style scoped>
 .icon-wrap {
   display:inline-block;
+  text-align: left;
   position: relative;
   width: 64px;
   height: 64px;

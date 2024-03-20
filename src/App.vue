@@ -76,7 +76,7 @@ const output = computed(() =>
     <v-main>
       <v-container :hidden="!model.data" transition="fade-transition">
         <v-row dense>
-          <v-col cols="6">
+          <v-col cols="12" xxl="8" xl="8" lg="8" md="8" sm="12">
             <v-card title="Resources">
               <v-card-text>
                 <v-row dense>
@@ -134,7 +134,7 @@ const output = computed(() =>
               </v-card-text>
             </v-card>
           </v-col>
-          <v-col cols="6">
+          <v-col cols="12" xxl="4" xl="4" lg="4" md="4" sm="12">
             <!-- TODO: move to component -->
             <v-card title="Equipment">
               <v-card-text>
@@ -177,6 +177,9 @@ const output = computed(() =>
 .save:hover {
   background: inherit;
   color: inherit;
+}
+.eqslot {
+  text-align: center;
 }
 [data-index="4"],
 [data-index="5"],
