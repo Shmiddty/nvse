@@ -4,8 +4,7 @@ import { reactive, computed } from 'vue'
 import InventoryItem from './components/InventoryItem.vue';
 
 const model = reactive({
-  state: { selected: null },
-  filename: "slot0.sav",
+  filename: null,
   data: null
 });
 
@@ -49,6 +48,8 @@ function load(e) {
   model.filename = e.target.files.item(0).name;
 }
 
+const resources = computed(() => model.data?.resources ?? {});
+const player = computed(() => model.data?.world?.player ?? {});
 const equipment = computed(() => model.data?.world?.player?.inventory?.equipment);
 const output = computed(() => 
   'data:text/plain;charset=utf-8,' + encodeURIComponent(Hx.Serialize(clean(model.data)))
@@ -69,21 +70,89 @@ const output = computed(() =>
           Save
         </a>
       </v-btn>
+      {{ model.filename }}
     </v-app-bar>
 
     <v-main>
-      <v-container>
+      <v-container :hidden="!model.data" transition="fade-transition">
         <v-row dense>
-          <v-col
-            cols="3"
-            v-for="invi in equipment"
-            :data-index="invi.index"
-            :key="invi.index">
-              <v-card>
-                <v-card-item class="item-wrapper">
-                  <InventoryItem :index="invi.index" :item="invi.item" />
-                </v-card-item>
-              </v-card>
+          <v-col cols="6">
+            <v-card title="Resources">
+              <v-card-text>
+                <v-row dense>
+                  <v-col>
+                    <v-text-field
+                      v-model.number="player.health"
+                      label="Health"
+                      type="number"
+                      :min="0"
+                      :max="player.maxHealth"
+                    />
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      v-model.number="player.maxHealth"
+                      label="Max Health"
+                      type="number"
+                      :min="0"
+                    />
+                  </v-col>
+                </v-row>
+
+                <v-row dense>
+                  <v-col cols="2">
+                    <v-text-field
+                      v-model.number="resources.power"
+                      label="Power"
+                      type="number"
+                      :min="0"
+                      :max="20"
+                    />
+                    <v-text-field
+                      v-model.number="resources.hope"
+                      label="Hope"
+                      type="number"
+                      :min="-100"
+                      :max="100"
+                    />
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      v-model.number="resources.coins"
+                      label="Coins"
+                      type="number"
+                      :min="0"
+                    />
+                    <v-text-field
+                      v-model.number="resources.hopestones"
+                      label="Hopestones"
+                      type="number"
+                      :min="0"
+                    />
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="6">
+            <!-- TODO: move to component -->
+            <v-card title="Equipment">
+              <v-card-text>
+                <v-row dense>
+                  <v-col
+                    cols="3"
+                    class="eqslot"
+                    v-for="invi in equipment"
+                    :data-index="invi.index"
+                    :key="invi.index">
+                      <InventoryItem
+                        :index="invi.index"
+                        :item="invi.item"
+                      />
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-card>
           </v-col>
         </v-row>
       </v-container>

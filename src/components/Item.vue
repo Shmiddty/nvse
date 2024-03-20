@@ -1,8 +1,7 @@
 <script setup>
-import { computed } from 'vue';
 import ItemList from './ItemList.vue';
 import ItemIcon from './ItemIcon.vue';
-import { equipmentIdMap as itemmap } from "../store/Items.js";
+import { equipmentById as itemmap } from "../store/Items.js";
 
 const props = defineProps({
   item: { type: Object, required: false },

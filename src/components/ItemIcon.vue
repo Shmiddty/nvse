@@ -61,6 +61,13 @@ $ols: 1px;
   width: 16px;
   height: 16px;
 }
+.nvicon-24 {
+  width: 24px;
+  height: 24px;
+}
+.nvicon-24:before {
+  transform: scale(1.5) translate(50%, 50%);
+}
 .nvicon-medium,
 .nvicon-32 {
   width: 32px;

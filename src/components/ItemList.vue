@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import { equipment as items, equipmentIdMap as itemmap } from "../store/Items.js";
+import { equipment as items, equipmentById as itemmap } from "../store/Items.js";
 
 const props = defineProps({
   selected: { type: Object, required: true },
