@@ -187,7 +187,9 @@ const output = computed(() =>
   background:#333;
   border:solid 1px #222;
   border-radius:10%;
+  transition: background-color 250ms linear;
 }
+.eqslot:hover,
 .eqslot:has([aria-expanded="true"]) {
   background: #357;
 }
