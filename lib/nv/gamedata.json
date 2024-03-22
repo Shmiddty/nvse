@@ -7429,7 +7429,7 @@
 					"active": true,
 					"name": "Skipjack Totem",
 					"type": 1,
-					"category": "Off-hand",
+					"category": "Totem",
 					"icon": "skipjack",
 					"description": "You roll faster.",
 					"flavor": "I can not hide / Nor can I flee / For the skipjack fix'd his eye on me.",
@@ -7509,7 +7509,7 @@
 					"active": true,
 					"name": "Death Whistle",
 					"type": 1,
-					"category": "Off-hand",
+					"category": "Totem",
 					"icon": "death_whistle",
 					"description": "Blow it to stun all nearby enemies.",
 					"flavor": "To frighten enemies, or just relive a moment of viciousness.",
@@ -7548,7 +7548,7 @@
 					"active": true,
 					"name": "Knave of Hearts",
 					"type": 1,
-					"category": "Dagger",
+					"category": "Off-hand Dagger",
 					"icon": "knave",
 					"description": "Throw out a ring of daggers.",
 					"flavor": "It's a full house, and you aren't welcome.",
@@ -7597,7 +7597,7 @@
 					"active": true,
 					"name": "Salto Crest",
 					"type": 1,
-					"category": "Off-hand",
+					"category": "Totem",
 					"icon": "salto",
 					"description": "Decreases your roll cooldown.",
 					"flavor": "Patron of the Jester / Friend to the Knave / Jokerman dance to the grave",
@@ -7627,7 +7627,7 @@
 					"active": true,
 					"name": "Entropic Staff",
 					"type": 1,
-					"category": "Off-hand",
+					"category": "Off-hand Staff",
 					"icon": "blizzard",
 					"description": "Summon a blizzard, freezing all enemies in an area.",
 					"flavor": "A beautiful creation, from those who worship the Entropic Gods.",
@@ -7667,7 +7667,7 @@
 					"active": true,
 					"name": "Frostskin Staff",
 					"type": 1,
-					"category": "Staff",
+					"category": "Off-hand Staff",
 					"icon": "frostskin",
 					"description": "Cover yourself in a protective layer of ice.",
 					"flavor": "",
@@ -7787,7 +7787,7 @@
 					"type": 1,
 					"icon": "corpse",
 					"name": "Corpse Defiler",
-					"category": "Off-hand",
+					"category": "Off-hand Staff",
 					"description": "The nearest corpse explodes, causing damage to all nearby enemies.",
 					"flavor": "The staff speeds up the natural decomposition process, turning the gastric contents into an explosive. The smell is intense.",
 					"rarity": 3,
@@ -7856,6 +7856,94 @@
 					"attacks": [
 						{
 							"attack": "block"
+						}
+					]
+				},
+				{
+					"id": "ScreamingSkull",
+					"active": true,
+					"name": "Screaming Skull",
+					"type": 1,
+					"category": "Off-hand Staff",
+					"icon": "screaming_skull",
+					"description": "Throw screaming skulls.",
+					"flavor": "Ask yourself, why do they scream?",
+					"anim_set": "staff",
+					"power_cost": 5,
+					"rarity": 4,
+					"properties": [
+						{
+							"stat": "damage",
+							"mode": 0,
+							"valence": 0,
+							"base": 10,
+							"increment": 0,
+							"type": 0,
+							"scale": false
+						},
+						{
+							"stat": "attack_rate",
+							"mode": 0,
+							"valence": 0,
+							"base": 3,
+							"increment": 0,
+							"type": 0,
+							"scale": false
+						}
+					],
+					"projectile": "AdriftBomb",
+					"attacks": [
+						{
+							"attack": "staff3"
+						}
+					]
+				},
+				{
+					"id": "NowhereWand",
+					"active": false,
+					"name": "Nowhere Wand",
+					"type": 1,
+					"category": "Off-hand Staff",
+					"icon": "nowhere_wand",
+					"description": "Create a ring of fire around yourself.",
+					"flavor": "Nowhere is safe.",
+					"anim_set": "staff",
+					"power_cost": 0,
+					"rarity": 4,
+					"properties": [
+						{
+							"stat": "damage",
+							"mode": 0,
+							"valence": 0,
+							"base": 10,
+							"increment": 0,
+							"type": 0,
+							"scale": false
+						},
+						{
+							"stat": "attack_rate",
+							"mode": 0,
+							"valence": 0,
+							"base": 0.5,
+							"increment": 0,
+							"type": 0,
+							"scale": false
+						},
+						{
+							"stat": "attack_count",
+							"mode": 0,
+							"valence": 0,
+							"base": 26,
+							"increment": 0,
+							"type": 0,
+							"scale": false,
+							"op": 1
+						}
+					],
+					"projectile": "AdriftFire",
+					"attacks": [
+						{
+							"attack": "staff1"
 						}
 					]
 				},
@@ -10418,20 +10506,6 @@
 						}
 					],
 					"anim_set": "",
-					"power_cost": 0
-				},
-				{
-					"id": "Stormeyes",
-					"active": true,
-					"name": "Stormeyes",
-					"type": 4,
-					"category": "Gloves",
-					"icon": "stormeye",
-					"description": "Enemies are pulled into your melee attacks.",
-					"flavor": "",
-					"anim_set": "",
-					"rarity": 2,
-					"properties": [],
 					"power_cost": 0
 				},
 				{
@@ -16443,6 +16517,113 @@
 					]
 				},
 				{
+					"id": "NowhereStaff",
+					"active": false,
+					"name": "Nowhere Staff",
+					"type": 0,
+					"category": "Staff",
+					"icon": "stardust",
+					"description": "",
+					"flavor": "",
+					"anim_set": "staff",
+					"power_cost": 0,
+					"rarity": 0,
+					"properties": [
+						{
+							"stat": "damage",
+							"mode": 0,
+							"valence": 0,
+							"base": 20,
+							"increment": 0,
+							"type": 0,
+							"scale": false
+						},
+						{
+							"stat": "attack_rate",
+							"mode": 0,
+							"valence": 0,
+							"base": 0.5,
+							"increment": 0,
+							"type": 0,
+							"scale": false
+						},
+						{
+							"stat": "attack_count",
+							"mode": 0,
+							"valence": 0,
+							"base": 6,
+							"increment": 0,
+							"type": 0,
+							"scale": false,
+							"op": 2
+						},
+						{
+							"stat": "attack_sequence",
+							"mode": 0,
+							"valence": 0,
+							"base": 18,
+							"increment": 0,
+							"type": 0,
+							"scale": false,
+							"op": 2
+						},
+						{
+							"stat": "inaccuracy",
+							"mode": 0,
+							"valence": 0,
+							"base": 0.5,
+							"increment": 0,
+							"type": 0,
+							"scale": false,
+							"op": 2
+						}
+					],
+					"projectile": "AdriftFirebit",
+					"attacks": [
+						{
+							"attack": "staff3"
+						}
+					]
+				},
+				{
+					"id": "Darklighter",
+					"active": false,
+					"name": "Darklighter",
+					"type": 0,
+					"category": "Sword",
+					"icon": "shadow_blade",
+					"description": "",
+					"flavor": "",
+					"anim_set": "",
+					"power_cost": 0,
+					"rarity": 0,
+					"properties": [
+						{
+							"stat": "damage",
+							"mode": 0,
+							"valence": 0,
+							"base": 20,
+							"increment": 0,
+							"type": 0,
+							"scale": false
+						},
+						{
+							"stat": "attack_rate",
+							"mode": 0,
+							"valence": 0,
+							"base": 1,
+							"increment": 0,
+							"type": 0,
+							"scale": false
+						}
+					],
+					"attacks": [
+						{
+							"attack": "longsword_sweep"
+						}
+					]
+				},
+				{
 					"id": "HollowWhip",
 					"active": false,
 					"name": "Hollow Whip",
@@ -17687,6 +17868,20 @@
 					"power_cost": 0
 				},
 				{
+					"id": "Stormeyes",
+					"active": false,
+					"name": "Stormeyes",
+					"type": 4,
+					"category": "Gloves",
+					"icon": "stormeye",
+					"description": "Enemies are pulled into your melee attacks.",
+					"flavor": "",
+					"anim_set": "",
+					"power_cost": 0,
+					"rarity": 2,
+					"properties": []
+				},
+				{
 					"id": "Whirlwind",
 					"active": false,
 					"type": 5,
@@ -18117,8 +18312,8 @@
 				23,
 				35,
 				38,
-				270,
-				426
+				271,
+				429
 			],
 			"props": {
 				"displayColumn": "name"
@@ -20926,6 +21121,83 @@
 					"sound": "proj_stardust"
 				},
 				{
+					"id": "AdriftFirebit",
+					"speed": 100,
+					"size": 1,
+					"range": 120,
+					"arc_segments": 270,
+					"knockback": 0,
+					"poise_damage": 0.2,
+					"moves": true,
+					"vel_align": false,
+					"pierces": true,
+					"layer": 0,
+					"loops": true,
+					"offset": 5,
+					"anim": "firebit",
+					"trail": "Trail",
+					"explosion": "TrailBurst",
+					"damage_type": "Chaos"
+				},
+				{
+					"id": "AdriftFire",
+					"speed": 4,
+					"size": 10,
+					"range": 100,
+					"arc_segments": 27,
+					"knockback": 0,
+					"poise_damage": 0.2,
+					"moves": false,
+					"vel_align": false,
+					"pierces": true,
+					"layer": 1,
+					"loops": true,
+					"offset": 0,
+					"anim": "adrift_fire",
+					"trail": "WalkPuff",
+					"explosion": "LandPuff",
+					"damage_type": "Chaos"
+				},
+				{
+					"id": "AdriftFallingArrow",
+					"speed": 0.8,
+					"size": 3,
+					"range": 100,
+					"arc_segments": 27,
+					"knockback": 0,
+					"poise_damage": 0.2,
+					"moves": false,
+					"vel_align": false,
+					"pierces": true,
+					"layer": 1,
+					"loops": true,
+					"offset": 0,
+					"damage_type": "Chaos",
+					"anim": "adrift_falling_arrow",
+					"explosion": "TrailBurst",
+					"sound": "proj_arrow"
+				},
+				{
+					"id": "AdriftBomb",
+					"speed": 140,
+					"size": 12,
+					"range": 120,
+					"arc_segments": 3,
+					"knockback": 0,
+					"poise_damage": 0.2,
+					"moves": true,
+					"vel_align": false,
+					"pierces": true,
+					"layer": 0,
+					"loops": true,
+					"offset": 10,
+					"anim": "adrift_bomb",
+					"trail": "EnergyTrail",
+					"explosion": "TrailBurst",
+					"sound": "proj_arrow",
+					"damage_type": "Chaos"
+				},
+				{
 					"id": "DrownedSpore",
 					"speed": 120,
 					"size": 5,
@@ -21144,7 +21416,7 @@
 					"display": null
 				},
 				{
-					"typeStr": "5:Player,Prisoner,Draugur,Hopeless,Cretin,Remnant,Adrift,Drowned,Hollow,Zealot,Thrall,Demonic,Pest,Other",
+					"typeStr": "5:Player,Prisoner,Draugur,Hopeless,Cretin,Remnant,Adrift,Drowned,Hollow,Zealot,Demonic,Pest,Other",
 					"name": "team"
 				},
 				{
@@ -21193,7 +21465,7 @@
 					"active": false,
 					"id": "Gaia",
 					"name": "Gaia",
-					"team": 13,
+					"team": 12,
 					"value": 0,
 					"visual": [
 						{
@@ -21209,34 +21481,11 @@
 				},
 				{
 					"active": false,
-					"id": "Doppleganger",
-					"name": "The Doppleganger",
-					"type": 0,
-					"ranged": false,
-					"team": 13,
-					"value": 12,
-					"visual": [
-						{
-							"anim": "player",
-							"wide": false
-						}
-					],
-					"stat": [],
-					"arsenal": [
-						{
-							"item": "RustedSword",
-							"difficulty_bar": 0
-						}
-					],
-					"difficulty_bar": 0
-				},
-				{
-					"active": false,
 					"id": "GuardianDespair",
 					"name": "Guardian of Despair",
 					"type": 2,
 					"ranged": false,
-					"team": 13,
+					"team": 12,
 					"difficulty_bar": 10,
 					"value": 15,
 					"visual": [
@@ -21266,7 +21515,7 @@
 				},
 				{
 					"id": "GuardianArrogance",
-					"name": "Guardian of Arrogance",
+					"name": "The Bloodless King",
 					"active": false,
 					"visual": [
 						{
@@ -21278,7 +21527,7 @@
 					"stat": [
 						{
 							"stat": "health",
-							"base": 2400,
+							"base": 3000,
 							"increment": 0
 						},
 						{
@@ -21315,10 +21564,6 @@
 					"arsenal": [
 						{
 							"item": "Belittler",
-							"difficulty_bar": 0
-						},
-						{
-							"item": "Firewalker",
 							"difficulty_bar": 0
 						}
 					],
@@ -21661,7 +21906,7 @@
 					"type": 2,
 					"ranged": false,
 					"team": 3,
-					"value": 6,
+					"value": 10,
 					"visual": [
 						{
 							"anim": "hopeless_warlord",
@@ -21674,7 +21919,7 @@
 					"stat": [
 						{
 							"stat": "health",
-							"base": 1200,
+							"base": 1500,
 							"increment": 0
 						},
 						{
@@ -21703,7 +21948,7 @@
 					"type": 2,
 					"ranged": false,
 					"team": 3,
-					"value": 6,
+					"value": 10,
 					"visual": [
 						{
 							"anim": "hopeless_warlord",
@@ -21716,7 +21961,7 @@
 					"stat": [
 						{
 							"stat": "health",
-							"base": 1200,
+							"base": 1500,
 							"increment": 0
 						},
 						{
@@ -22026,7 +22271,7 @@
 					"ranged": false,
 					"team": 4,
 					"difficulty_bar": 15,
-					"value": 6,
+					"value": 10,
 					"visual": [
 						{
 							"anim": "cretin_colossus",
@@ -22039,7 +22284,7 @@
 					"stat": [
 						{
 							"stat": "health",
-							"base": 2400,
+							"base": 3000,
 							"increment": 0
 						},
 						{
@@ -22440,19 +22685,19 @@
 				},
 				{
 					"active": false,
-					"id": "LastRemnant",
+					"id": "GuardianGreed",
 					"name": "The Last Remnant",
-					"value": 6,
+					"value": 10,
 					"visual": [
 						{
-							"anim": "remnant_boss",
+							"anim": "guardian_greed",
 							"wide": false
 						}
 					],
 					"stat": [
 						{
 							"stat": "health",
-							"base": 2400,
+							"base": 3000,
 							"increment": 0
 						},
 						{
@@ -22655,32 +22900,42 @@
 				{
 					"active": false,
 					"id": "GuardianIre",
-					"name": "Guardian of Ire",
-					"value": 6,
+					"name": "The Night Watcher",
+					"value": 10,
 					"visual": [
 						{
 							"anim": "guardian_ire",
-							"wide": false
+							"wide": true
 						}
 					],
 					"stat": [
 						{
 							"stat": "health",
-							"base": 3200,
+							"base": 3000,
 							"increment": 100
 						},
 						{
 							"stat": "speed",
-							"base": 90,
+							"base": 240,
 							"increment": 0
 						},
 						{
 							"stat": "size",
-							"base": 20,
+							"base": 48,
+							"increment": 0
+						},
+						{
+							"stat": "acceleration",
+							"base": 800,
 							"increment": 0
 						}
 					],
-					"arsenal": [],
+					"arsenal": [
+						{
+							"item": "Darklighter",
+							"difficulty_bar": 0
+						}
+					],
 					"team": 6,
 					"type": 2,
 					"ranged": false,
@@ -22689,12 +22944,12 @@
 				{
 					"active": false,
 					"id": "NowhereGuide",
-					"name": "Nowhere Guide",
+					"name": "The Nowhere Guide",
 					"type": 2,
 					"ranged": false,
 					"team": 6,
 					"difficulty_bar": 25,
-					"value": 6,
+					"value": 10,
 					"visual": [
 						{
 							"anim": "adrift_nowhere_guide",
@@ -22707,21 +22962,26 @@
 					"stat": [
 						{
 							"stat": "health",
-							"base": 3200,
+							"base": 3000,
 							"increment": 100
 						},
 						{
 							"stat": "speed",
-							"base": 80,
+							"base": 100,
 							"increment": 0
 						},
 						{
 							"stat": "size",
-							"base": 48,
+							"base": 56,
 							"increment": 0
 						}
 					],
-					"arsenal": []
+					"arsenal": [
+						{
+							"item": "NowhereStaff",
+							"difficulty_bar": 0
+						}
+					]
 				},
 				{
 					"active": true,
@@ -23141,7 +23401,7 @@
 				{
 					"active": false,
 					"id": "GuardianShame",
-					"name": "Guardian of Shame",
+					"name": "The Anguished",
 					"value": 10,
 					"visual": [
 						{
@@ -23171,6 +23431,19 @@
 					"type": 2,
 					"ranged": false,
 					"difficulty_bar": 40
+				},
+				{
+					"active": false,
+					"id": "Mortopavida",
+					"name": "Mortopavida",
+					"type": 2,
+					"ranged": false,
+					"team": 8,
+					"difficulty_bar": 35,
+					"value": 10,
+					"visual": [],
+					"stat": [],
+					"arsenal": []
 				},
 				{
 					"active": true,
@@ -23404,6 +23677,43 @@
 				},
 				{
 					"active": false,
+					"id": "HollowReaper",
+					"name": "Hollow Reaper",
+					"type": 1,
+					"ranged": false,
+					"team": 8,
+					"difficulty_bar": 38,
+					"value": 2,
+					"visual": [
+						{
+							"anim": "hollow_reaper",
+							"wide": false,
+							"hit_sound": "enemy_draugur_hit",
+							"die_sound": "enemy_draugur_die",
+							"hit_emitter": "LandPuff"
+						}
+					],
+					"stat": [
+						{
+							"stat": "health",
+							"base": 30,
+							"increment": 0
+						},
+						{
+							"stat": "speed",
+							"base": 60,
+							"increment": 0
+						},
+						{
+							"stat": "size",
+							"base": 26,
+							"increment": 0
+						}
+					],
+					"arsenal": []
+				},
+				{
+					"active": false,
 					"id": "HollowSovereign",
 					"name": "Hollow Sovereign",
 					"type": 1,
@@ -23443,6 +23753,19 @@
 							"difficulty_bar": 0
 						}
 					]
+				},
+				{
+					"active": false,
+					"id": "Bloodrinker",
+					"name": "The Bloodrinker",
+					"type": 2,
+					"ranged": false,
+					"team": 9,
+					"difficulty_bar": 45,
+					"value": 0,
+					"visual": [],
+					"stat": [],
+					"arsenal": []
 				},
 				{
 					"active": false,
@@ -23557,45 +23880,8 @@
 				},
 				{
 					"active": false,
-					"id": "ZealotAncestral",
-					"name": "Zealot Ancestral",
-					"type": 1,
-					"ranged": false,
-					"team": 9,
-					"difficulty_bar": 38,
-					"value": 2,
-					"visual": [
-						{
-							"anim": "zealot_ancestral",
-							"wide": false,
-							"hit_sound": "enemy_draugur_hit",
-							"die_sound": "enemy_draugur_die",
-							"hit_emitter": "LandPuff"
-						}
-					],
-					"stat": [
-						{
-							"stat": "health",
-							"base": 30,
-							"increment": 0
-						},
-						{
-							"stat": "speed",
-							"base": 60,
-							"increment": 0
-						},
-						{
-							"stat": "size",
-							"base": 26,
-							"increment": 0
-						}
-					],
-					"arsenal": []
-				},
-				{
-					"active": false,
 					"id": "GuardianFear",
-					"name": "Guardian of Fear",
+					"name": "The Silken Blade",
 					"value": 10,
 					"visual": [
 						{
@@ -23621,7 +23907,7 @@
 						}
 					],
 					"arsenal": [],
-					"team": 11,
+					"team": 10,
 					"type": 2,
 					"ranged": false,
 					"difficulty_bar": 50
@@ -23870,7 +24156,7 @@
 						}
 					],
 					"arsenal": [],
-					"team": 12,
+					"team": 11,
 					"type": 2,
 					"ranged": false,
 					"difficulty_bar": 0
@@ -23879,7 +24165,7 @@
 					"active": false,
 					"id": "PestRat",
 					"name": "Rat Pest",
-					"team": 12,
+					"team": 11,
 					"value": 0.5,
 					"visual": [
 						{
@@ -23923,7 +24209,7 @@
 					"name": "Slime Pest",
 					"type": 1,
 					"ranged": false,
-					"team": 12,
+					"team": 11,
 					"value": 0.5,
 					"visual": [
 						{
@@ -23963,7 +24249,7 @@
 					"active": false,
 					"id": "PestBat",
 					"name": "Bat Pest",
-					"team": 12,
+					"team": 11,
 					"value": 0.5,
 					"visual": [
 						{
@@ -24051,7 +24337,7 @@
 					"type": 1,
 					"ranged": false,
 					"difficulty_bar": 0,
-					"team": 12
+					"team": 11
 				},
 				{
 					"active": false,
@@ -24088,7 +24374,7 @@
 						}
 					],
 					"arsenal": [],
-					"team": 12
+					"team": 11
 				},
 				{
 					"active": false,
@@ -24130,7 +24416,7 @@
 							"difficulty_bar": 0
 						}
 					],
-					"team": 12
+					"team": 11
 				},
 				{
 					"active": false,
@@ -24177,7 +24463,7 @@
 							"difficulty_bar": 0
 						}
 					],
-					"team": 12
+					"team": 11
 				},
 				{
 					"active": false,
@@ -24219,7 +24505,7 @@
 							"difficulty_bar": 0
 						}
 					],
-					"team": 12
+					"team": 11
 				},
 				{
 					"active": false,
@@ -24539,7 +24825,7 @@
 					"name": "The Malingerer",
 					"type": 3,
 					"ranged": false,
-					"team": 13,
+					"team": 12,
 					"difficulty_bar": 0,
 					"value": 0,
 					"visual": [
@@ -25047,7 +25333,7 @@
 					"name": "Hornslack Guard",
 					"type": 1,
 					"ranged": false,
-					"team": 13,
+					"team": 12,
 					"difficulty_bar": 0,
 					"value": 5,
 					"visual": [
@@ -25082,17 +25368,17 @@
 				}
 			],
 			"separators": [
-				4,
-				13,
-				21,
-				30,
-				35,
-				43,
-				47,
-				54,
-				58,
-				64,
-				73
+				3,
+				12,
+				20,
+				29,
+				34,
+				42,
+				46,
+				55,
+				59,
+				65,
+				74
 			],
 			"props": {
 				"displayColumn": "name",
@@ -25105,7 +25391,7 @@
 					"Drowned",
 					"Hollow",
 					"Zealot",
-					"Thrall",
+					"Demonic",
 					"Pest",
 					"NPCs"
 				]
@@ -25455,13 +25741,39 @@
 				{
 					"name": "father_greed",
 					"ref": "",
-					"items": [],
+					"items": [
+						{
+							"text": "I am behind you, son, breathing purpose into your quest."
+						},
+						{
+							"text": "The Seal of Greed is no more. It held down great men of ambition and vision."
+						},
+						{
+							"text": "I will remake this world into what it was meant to be. "
+						},
+						{
+							"text": "The truth of nature will emerge from the winter of mans hubris."
+						}
+					],
 					"random": false
 				},
 				{
 					"name": "father_ire",
 					"ref": "",
-					"items": [],
+					"items": [
+						{
+							"text": "Every day, you work to prove yourself as my hand in that lightless realm."
+						},
+						{
+							"text": "The Seal of Ire dimmed the passionate flames of humanity."
+						},
+						{
+							"text": "I created you to be passionate, wild, violent, and true. "
+						},
+						{
+							"text": "The absence of such things is an insult."
+						}
+					],
 					"random": false
 				},
 				{
@@ -25869,7 +26181,7 @@
 				},
 				{
 					"name": "greed_intro",
-					"ref": "last_remnant",
+					"ref": "guardian_greed",
 					"random": false,
 					"items": [
 						{
@@ -25882,7 +26194,7 @@
 				},
 				{
 					"name": "greed_transform",
-					"ref": "last_remnant",
+					"ref": "guardian_greed",
 					"random": false,
 					"items": [
 						{
@@ -25892,7 +26204,7 @@
 				},
 				{
 					"name": "greed_die",
-					"ref": "last_remnant",
+					"ref": "guardian_greed",
 					"random": false,
 					"items": [
 						{
@@ -25900,6 +26212,26 @@
 						},
 						{
 							"text": "You share a grisly fate with all those who desire too much."
+						}
+					]
+				},
+				{
+					"name": "ire_intro",
+					"ref": "guardian_ire",
+					"random": false,
+					"items": [
+						{
+							"text": "Another lost soul, setting foot where they should not set foot..."
+						}
+					]
+				},
+				{
+					"name": "ire_die",
+					"ref": "guardian_ire",
+					"random": false,
+					"items": [
+						{
+							"text": "Your problems are your own now. And my problems are no more..."
 						}
 					]
 				},
@@ -28455,21 +28787,21 @@
 				}
 			],
 			"separators": [
-				61,
-				85,
-				104,
-				123,
-				138,
-				157,
-				169,
-				187,
-				211,
-				225,
-				226,
-				230,
-				231,
+				63,
+				87,
+				106,
+				125,
+				140,
+				159,
+				171,
+				189,
+				213,
+				227,
+				228,
 				232,
-				234
+				233,
+				234,
+				236
 			],
 			"props": {
 				"separatorTitles": [
@@ -28746,18 +29078,6 @@
 					"active": false,
 					"area": 0,
 					"file": "world/Entryway.tmx",
-					"subtitle": "",
-					"difficulty_bar": 0
-				},
-				{
-					"id": "GatewayRoad",
-					"active": false,
-					"name": "The Gateway Road",
-					"type": 2,
-					"area": 0,
-					"light": 0.1,
-					"ambient": "ambient_forest",
-					"tileset": "forest",
 					"subtitle": "",
 					"difficulty_bar": 0
 				},
@@ -29577,18 +29897,6 @@
 					]
 				},
 				{
-					"id": "Sepulcher",
-					"active": false,
-					"name": "Sepulcher",
-					"subtitle": "",
-					"type": 3,
-					"area": 1,
-					"difficulty_bar": 8,
-					"light": 0,
-					"tileset": "dungeon",
-					"ambient": "ambient_cave"
-				},
-				{
 					"id": "RuinsAntechamber",
 					"active": false,
 					"name": "Ruins Antechamber",
@@ -29685,7 +29993,6 @@
 					"tileset": "ruins",
 					"music": "music_sanctum",
 					"ambient": "ambient_cave",
-					"file": "world/Wellspring.tmx",
 					"difficulty_bar": 0
 				},
 				{
@@ -29752,18 +30059,6 @@
 					"light": 0,
 					"tileset": "ruins",
 					"music": "music_witch",
-					"ambient": "ambient_mystical"
-				},
-				{
-					"id": "",
-					"active": false,
-					"name": "",
-					"subtitle": "",
-					"type": 1,
-					"area": 2,
-					"difficulty_bar": 0,
-					"light": 0.2,
-					"tileset": "ruins",
 					"ambient": "ambient_mystical"
 				},
 				{
@@ -29910,26 +30205,6 @@
 					"ambient": "ambient_mystical"
 				},
 				{
-					"id": "",
-					"active": false,
-					"name": "",
-					"subtitle": "",
-					"type": 0,
-					"area": 0,
-					"difficulty_bar": 0,
-					"light": 0
-				},
-				{
-					"id": "",
-					"active": false,
-					"name": "",
-					"subtitle": "",
-					"type": 0,
-					"area": 0,
-					"difficulty_bar": 0,
-					"light": 0
-				},
-				{
 					"id": "Bombardment",
 					"active": false,
 					"name": "Bombardment",
@@ -30024,39 +30299,6 @@
 					"ambient": "ambient_ominous"
 				},
 				{
-					"id": "",
-					"active": false,
-					"name": "",
-					"subtitle": "",
-					"type": 3,
-					"area": 2,
-					"difficulty_bar": 0,
-					"light": 0.2,
-					"tileset": "ruins"
-				},
-				{
-					"id": "",
-					"active": false,
-					"name": "",
-					"subtitle": "",
-					"type": 3,
-					"area": 2,
-					"difficulty_bar": 0,
-					"light": 0.2,
-					"tileset": "ruins"
-				},
-				{
-					"id": "",
-					"active": false,
-					"name": "",
-					"subtitle": "",
-					"type": 3,
-					"area": 2,
-					"difficulty_bar": 0,
-					"light": 0.2,
-					"tileset": "ruins"
-				},
-				{
 					"id": "RiverAntechamber",
 					"active": true,
 					"name": "River Antechamber",
@@ -30071,14 +30313,39 @@
 				},
 				{
 					"id": "SealIre",
-					"active": true,
+					"active": false,
 					"name": "Seal of Ire",
 					"subtitle": "",
-					"type": 2,
+					"type": 0,
 					"area": 3,
 					"difficulty_bar": 0,
 					"light": 0.2,
-					"tileset": "river"
+					"tileset": "river",
+					"ambient": "ambient_swamp"
+				},
+				{
+					"id": "PathNowhere",
+					"active": false,
+					"name": "Path to Nowhere",
+					"subtitle": "",
+					"type": 0,
+					"area": 3,
+					"difficulty_bar": 0,
+					"light": 0.1,
+					"tileset": "river",
+					"ambient": "ambient_swamp"
+				},
+				{
+					"id": "Terrace",
+					"active": false,
+					"name": "Terrace",
+					"subtitle": "",
+					"type": 1,
+					"area": 3,
+					"light": 0.3,
+					"tileset": "wharf",
+					"difficulty_bar": 0,
+					"ambient": "ambient_swamp"
 				},
 				{
 					"id": "Slophouse",
@@ -30088,9 +30355,8 @@
 					"type": 1,
 					"area": 3,
 					"light": 0,
-					"tileset": "caves",
-					"ambient": "ambient_ominous",
-					"file": "world/Slophouse.tmx",
+					"tileset": "river",
+					"ambient": "ambient_swamp",
 					"difficulty_bar": 0
 				},
 				{
@@ -30102,18 +30368,7 @@
 					"area": 3,
 					"light": 0.1,
 					"tileset": "river",
-					"ambient": "ambient_forest",
-					"difficulty_bar": 0
-				},
-				{
-					"id": "RiverCourtyard",
-					"active": false,
-					"name": "Courtyard",
-					"subtitle": "",
-					"type": 1,
-					"area": 3,
-					"light": 0.3,
-					"tileset": "river",
+					"ambient": "ambient_swamp",
 					"difficulty_bar": 0
 				},
 				{
@@ -30123,9 +30378,10 @@
 					"subtitle": "",
 					"type": 1,
 					"area": 3,
-					"light": 0,
-					"tileset": "river",
-					"difficulty_bar": 0
+					"light": 0.2,
+					"tileset": "wharf",
+					"difficulty_bar": 0,
+					"ambient": "ambient_swamp"
 				},
 				{
 					"id": "TrialIre",
@@ -30136,12 +30392,24 @@
 					"area": 3,
 					"light": 0,
 					"tileset": "river",
+					"difficulty_bar": 0,
+					"ambient": "ambient_swamp"
+				},
+				{
+					"id": "PetalGlade",
+					"active": false,
+					"name": "Petal Glade",
+					"subtitle": "",
+					"type": 1,
+					"area": 3,
+					"light": 0,
+					"tileset": "river",
 					"difficulty_bar": 0
 				},
 				{
-					"id": "RiverClear",
+					"id": "Estuary",
 					"active": true,
-					"name": "River of Souls",
+					"name": "Estuary",
 					"type": 0,
 					"light": 0.2,
 					"ambient": "ambient_swamp",
@@ -30175,20 +30443,9 @@
 					"tileset": "halls"
 				},
 				{
-					"id": "PetalGlade",
+					"id": "Narthex",
 					"active": false,
-					"name": "Petal Glade",
-					"subtitle": "",
-					"type": 1,
-					"area": 4,
-					"light": 0,
-					"tileset": "halls",
-					"difficulty_bar": 0
-				},
-				{
-					"id": "HallsCourtyard",
-					"active": false,
-					"name": "Courtyard",
+					"name": "Narthex",
 					"subtitle": "",
 					"type": 1,
 					"area": 4,
@@ -30309,21 +30566,9 @@
 					"file": "world/Vault.tmx"
 				},
 				{
-					"id": "Belltower",
+					"id": "Rotunda",
 					"active": false,
-					"name": "Belltower",
-					"subtitle": "",
-					"type": 1,
-					"area": 5,
-					"light": 0.1,
-					"tileset": "palace",
-					"music": "music_cloister",
-					"difficulty_bar": 0
-				},
-				{
-					"id": "PalaceCourtyard",
-					"active": false,
-					"name": "Courtyard",
+					"name": "Rotunda",
 					"subtitle": "",
 					"type": 1,
 					"area": 5,
@@ -30374,13 +30619,13 @@
 			],
 			"separators": [
 				8,
-				14,
-				22,
-				67,
-				101,
-				109,
-				117,
-				126
+				13,
+				21,
+				65,
+				93,
+				103,
+				110,
+				118
 			],
 			"props": {
 				"separatorTitles": [
