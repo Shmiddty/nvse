@@ -3,10 +3,18 @@ import { computed } from 'vue'
 import { equipmentById, statsById } from '../store/Items.js'
 
 function mergeStat(a, b) {
-  const value = Math.sqrt(2 * Math.abs(a.value * b.value))
+  const A = a.value
+  const B = b.value
+
+  if ((A < 0 && B > 0) || (A > 0 && B < 0))
+    return {
+      ...a,
+      value: A + B
+    }
+
   return {
     ...a,
-    value
+    value: Math.sqrt(2 * Math.abs(A * B))
   }
 }
 function scale(prop, levels) {
