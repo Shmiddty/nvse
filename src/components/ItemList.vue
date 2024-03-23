@@ -1,29 +1,31 @@
 <script setup>
-import { computed } from 'vue';
-import { equipment as items, equipmentById as itemmap } from "../store/Items.js";
+import { computed } from 'vue'
+import { equipment as items, equipmentById as itemmap } from '../store/Items.js'
 
 const props = defineProps({
-  selected: { type: Object, required: true },
-  label: { type:String }
-});
+  label: { type: String }
+})
+const selected = defineModel('selected')
+
 function filter(id, query, item) {
   const props = [
     item.raw.name,
     item.raw.id,
     item.raw.category,
-    item.raw.description, 
-    ...item.raw.properties.map(p => p.stat)
-  ].map(s => s.toLowerCase());
-  return props.some(p => p.includes(query.toLowerCase()));
+    ...item.raw.properties.map((p) => p.stat)
+  ].map((s) => s.toLowerCase())
+  return props.some((p) => p.includes(query.toLowerCase()))
 }
+
+// TODO: this is a bit hacky, but I'm not sure how else to go about it.
 const selectedId = computed({
   get() {
-    return itemmap[props.selected.id] || { id:undefined, name:'' };
+    return itemmap[props.selected.id] || { id: undefined, name: '' }
   },
   set(item) {
-    props.selected.id = item?.id;
+    selected.value.id = item?.id
   }
-});
+})
 </script>
 
 <template>
@@ -38,6 +40,4 @@ const selectedId = computed({
   />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

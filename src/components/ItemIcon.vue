@@ -1,17 +1,21 @@
 <script setup>
-import '../../lib/nv/icons.css';
-import { computed } from 'vue';
+import '../../lib/nv/icons.css'
+import { computed } from 'vue'
 
 const props = defineProps({
   icon: { type: String, required: true },
   rarity: { type: Number, required: false },
   size: { type: String }
 })
-const className = computed(() => 
-  'nvicon nvicon-' + props.icon +
-  ' nvicon-' + (props.size || "native") +
-  ' nvicon-rarity' + (props.rarity || 0)
-);
+const className = computed(
+  () =>
+    'nvicon nvicon-' +
+    props.icon +
+    ' nvicon-' +
+    (props.size || 'native') +
+    ' nvicon-rarity' +
+    (props.rarity || 0)
+)
 </script>
 
 <template>
@@ -20,12 +24,12 @@ const className = computed(() =>
 
 <style lang="scss" scoped>
 .nvicon {
-  display:inline-block;
+  display: inline-block;
 }
 .nvicon:before {
 }
 
-$cmn: rgba(0,0,0,0);
+$cmn: rgba(0, 0, 0, 0);
 $uncmn: blue;
 $rare: yellow;
 $lgnd: #c50;
@@ -33,27 +37,23 @@ $uniq: green;
 $ols: 1px;
 .nvicon-rarity1 {
   filter: drop-shadow(-$ols (-$ols) 0px $uncmn)
-          drop-shadow(2*$ols 2*$ols 0px $uncmn)
-          drop-shadow(-$ols $ols 0px $uncmn)
-          drop-shadow($ols (-$ols) 0px $uncmn)
+    drop-shadow(2 * $ols 2 * $ols 0px $uncmn) drop-shadow(-$ols $ols 0px $uncmn)
+    drop-shadow($ols (-$ols) 0px $uncmn);
 }
 .nvicon-rarity2 {
   filter: drop-shadow(-$ols (-$ols) 0px $rare)
-          drop-shadow(2*$ols 2*$ols 0px $rare)
-          drop-shadow(-$ols $ols 0px $rare)
-          drop-shadow($ols (-$ols) 0px $rare)
+    drop-shadow(2 * $ols 2 * $ols 0px $rare) drop-shadow(-$ols $ols 0px $rare)
+    drop-shadow($ols (-$ols) 0px $rare);
 }
 .nvicon-rarity3 {
   filter: drop-shadow(-$ols (-$ols) 0px $lgnd)
-          drop-shadow(2*$ols 2*$ols 0px $lgnd)
-          drop-shadow(-$ols $ols 0px $lgnd)
-          drop-shadow($ols (-$ols) 0px $lgnd)
+    drop-shadow(2 * $ols 2 * $ols 0px $lgnd) drop-shadow(-$ols $ols 0px $lgnd)
+    drop-shadow($ols (-$ols) 0px $lgnd);
 }
 .nvicon-rarity4 {
   filter: drop-shadow(-$ols (-$ols) 0px $uniq)
-          drop-shadow(2*$ols 2*$ols 0px $uniq)
-          drop-shadow(-$ols $ols 0px $uniq)
-          drop-shadow($ols (-$ols) 0px $uniq)
+    drop-shadow(2 * $ols 2 * $ols 0px $uniq) drop-shadow(-$ols $ols 0px $uniq)
+    drop-shadow($ols (-$ols) 0px $uniq);
 }
 
 .nvicon-native,
@@ -93,5 +93,4 @@ $ols: 1px;
 .nvicon-64:before {
   transform: scale(4) translate(50%, 50%);
 }
-
 </style>

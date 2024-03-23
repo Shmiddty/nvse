@@ -1,33 +1,25 @@
 <script setup>
-import { computed, ref } from 'vue';
-import Item from './Item.vue';
-import ItemStats from './ItemStats.vue';
-import ItemList from './ItemList.vue';
-import ItemIcon from './ItemIcon.vue';
-import { equipmentById as itemmap } from "../store/Items.js";
+import { computed, ref } from 'vue'
+import ItemStats from './ItemStats.vue'
+import ItemList from './ItemList.vue'
+import ItemIcon from './ItemIcon.vue'
+import { equipmentById as itemmap } from '../store/Items.js'
 
-const props = defineProps({
-  index: { type: Number, required: true },
-  item: { type: Object, required: false },
+defineProps({
+  index: { type: Number, required: true }
 })
-const dItem = computed(() => itemmap[props.item.id]);
-const dMeld = computed(() => itemmap[props.item.meld.id]);
-const menu = ref(false);
+
+const item = defineModel('item')
+const dItem = computed(() => itemmap[item.value.id])
+const dMeld = computed(() => itemmap[item.value.meld.id])
+const menu = ref(false)
 </script>
 
 <template>
-  <v-menu
-    v-model="menu"
-    open-on-hover
-    :close-on-content-click="false"
-  >
+  <v-menu v-model="menu" open-on-hover :close-on-content-click="false">
     <template v-slot:activator="{ props }">
       <v-sheet v-bind="props" class="icon-wrap">
-        <ItemIcon
-          size="48"
-          :icon="dItem?.icon"
-          :rarity="dItem?.rarity"
-        />
+        <ItemIcon size="48" :icon="dItem?.icon" :rarity="dItem?.rarity" />
         <ItemIcon
           class="meld"
           size="24"
@@ -36,7 +28,7 @@ const menu = ref(false);
         />
       </v-sheet>
     </template>
-    <template v-slot:default="{ isActive }">
+    <template v-slot:default="{}">
       <v-card>
         <v-card-text>
           <v-row dense>
@@ -78,7 +70,7 @@ const menu = ref(false);
 
 <style scoped>
 .icon-wrap {
-  display:inline-block;
+  display: inline-block;
   background: inherit;
   text-align: left;
   position: relative;
