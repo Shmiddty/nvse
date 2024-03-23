@@ -228,12 +228,12 @@
 					"base": 1,
 					"breakpoint": 0,
 					"bound": 0,
-					"display": "Critical Chance",
+					"display": "Critical Chance Modifier",
 					"display_type": 1
 				},
 				{
 					"id": "crit_damage",
-					"display": "Critical Damage",
+					"display": "Critical Damage Modifier",
 					"type": 0,
 					"display_type": 1,
 					"base": 1,
@@ -7900,7 +7900,7 @@
 				},
 				{
 					"id": "NowhereWand",
-					"active": false,
+					"active": true,
 					"name": "Nowhere Wand",
 					"type": 1,
 					"category": "Off-hand Staff",
@@ -8747,7 +8747,7 @@
 					"active": true,
 					"name": "Thorn of Crowns",
 					"type": 2,
-					"category": "",
+					"category": "Hat",
 					"icon": "thorncrown",
 					"description": "Whenever you're dealt damage, the life lost becomes a spirit that seeks the attacker.",
 					"flavor": "Our misdeeds come back upon us. Sometimes rather quickly.",
@@ -10875,7 +10875,7 @@
 							"stat": "singularity_damage",
 							"mode": 0,
 							"valence": 0,
-							"base": 12,
+							"base": 3,
 							"increment": 3,
 							"type": 2,
 							"scale": false,
@@ -15447,7 +15447,7 @@
 					"rarity": 0,
 					"properties": [
 						{
-							"base": 20,
+							"base": 30,
 							"increment": 0,
 							"type": 2,
 							"stat": "defense",
@@ -16120,6 +16120,41 @@
 						},
 						{
 							"attack": "sword3"
+						}
+					]
+				},
+				{
+					"id": "AdriftArmor",
+					"active": false,
+					"name": "Adrift Armor",
+					"type": 0,
+					"category": "",
+					"icon": "leather_armor",
+					"description": "",
+					"flavor": "",
+					"anim_set": "",
+					"power_cost": 0,
+					"rarity": 0,
+					"properties": [
+						{
+							"stat": "defense",
+							"mode": 0,
+							"valence": 0,
+							"base": 15,
+							"increment": 0,
+							"type": 2,
+							"scale": false,
+							"op": 1
+						},
+						{
+							"stat": "evasion",
+							"mode": 0,
+							"valence": 0,
+							"base": 15,
+							"increment": 0,
+							"type": 2,
+							"scale": false,
+							"op": 1
 						}
 					]
 				},
@@ -18313,7 +18348,7 @@
 				35,
 				38,
 				271,
-				429
+				430
 			],
 			"props": {
 				"displayColumn": "name"
@@ -23019,6 +23054,10 @@
 						{
 							"item": "GhostScythe",
 							"difficulty_bar": 0
+						},
+						{
+							"item": "AdriftArmor",
+							"difficulty_bar": 10
 						}
 					],
 					"type": 1,
@@ -23064,6 +23103,10 @@
 						{
 							"item": "AdriftSoulpiercer",
 							"difficulty_bar": 0
+						},
+						{
+							"item": "AdriftArmor",
+							"difficulty_bar": 10
 						}
 					]
 				},
@@ -23103,6 +23146,10 @@
 						{
 							"item": "AdriftSpiritblade",
 							"difficulty_bar": 0
+						},
+						{
+							"item": "AdriftArmor",
+							"difficulty_bar": 10
 						}
 					],
 					"type": 1,
@@ -23148,6 +23195,10 @@
 						{
 							"item": "AdriftSoulsplitter",
 							"difficulty_bar": 0
+						},
+						{
+							"item": "AdriftArmor",
+							"difficulty_bar": 10
 						}
 					]
 				},
@@ -23187,6 +23238,10 @@
 						{
 							"item": "AdriftSoulspewer",
 							"difficulty_bar": 0
+						},
+						{
+							"item": "AdriftArmor",
+							"difficulty_bar": 10
 						}
 					],
 					"type": 1,
@@ -23228,7 +23283,12 @@
 							"increment": 0
 						}
 					],
-					"arsenal": []
+					"arsenal": [
+						{
+							"item": "AdriftArmor",
+							"difficulty_bar": 10
+						}
+					]
 				},
 				{
 					"active": true,
