@@ -2,6 +2,7 @@
 import { reactive, computed } from 'vue'
 import { load, save } from './store/nvdata.js'
 import PlayerResources from './components/PlayerResources.vue'
+import SaveData from './components/SaveData.vue'
 import PlayerEquipment from './components/PlayerEquipment.vue'
 const model = reactive({
   filename: null,
@@ -19,6 +20,7 @@ function fileSelected(e) {
 
 const resources = computed(() => model.data?.resources ?? {})
 const player = computed(() => model.data?.world?.player ?? {})
+const saveData = computed(() => model.data?.world?.saveData ?? {})
 const equipment = computed(
   () => model.data?.world?.player?.inventory?.equipment
 )
@@ -61,6 +63,7 @@ const output = computed(
               v-model:player="player"
               v-model:resources="resources"
             />
+            <SaveData v-model="saveData" />
           </v-col>
           <v-col cols="12" xxl="4" xl="4" lg="4" md="5" sm="12">
             <PlayerEquipment :equipment="equipment" />
