@@ -2,12 +2,12 @@
 import InventoryItem from './InventoryItem.vue'
 
 defineProps({
-  equipment: { type: Array, required: true }
+  equipment: { type: Array }
 })
 </script>
 
 <template>
-  <v-card title="Equipment">
+  <v-card title="Equipment" v-if="equipment">
     <v-card-text>
       <v-row dense class="eqgrid">
         <v-col

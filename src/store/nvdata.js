@@ -5,6 +5,11 @@ function sanitize(data) {
     i.item = i.item ?? { id: undefined, quality: 0, meld: null }
     i.item.meld = i.item.meld ?? { id: undefined, quality: 0 }
   })
+  data.world.inventory.stash.forEach((i) => {
+    i.item = i.item ?? { id: undefined, quality: 0, meld: null }
+    i.item.meld = i.item.meld ?? { id: undefined, quality: 0 }
+  })
+
   return data
 }
 function clean(data) {
@@ -26,6 +31,10 @@ function clean(data) {
   if (!data) return data
   const out = unproxify(data)
   out.world.player.inventory.equipment.forEach((i) => {
+    i.item.meld = i.item.meld.id ? i.item.meld : null
+    i.item = i.item.id ? i.item : null
+  })
+  out.world.inventory.stash.forEach((i) => {
     i.item.meld = i.item.meld.id ? i.item.meld : null
     i.item = i.item.id ? i.item : null
   })

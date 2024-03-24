@@ -3,8 +3,8 @@ import '../../lib/nv/icons.css'
 import { computed } from 'vue'
 
 const props = defineProps({
-  icon: { type: String, required: true },
-  rarity: { type: Number, required: false },
+  icon: { type: String },
+  rarity: { type: Number },
   size: { type: String }
 })
 const className = computed(
@@ -19,7 +19,7 @@ const className = computed(
 </script>
 
 <template>
-  <i :class="className" />
+  <i v-if="icon" :class="className" />
 </template>
 
 <style lang="scss" scoped>

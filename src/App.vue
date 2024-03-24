@@ -4,6 +4,8 @@ import { load, save } from './store/nvdata.js'
 import PlayerResources from './components/PlayerResources.vue'
 import SaveData from './components/SaveData.vue'
 import PlayerEquipment from './components/PlayerEquipment.vue'
+import PlayerStash from './components/PlayerStash.vue'
+
 const model = reactive({
   filename: null,
   data: null
@@ -24,6 +26,7 @@ const saveData = computed(() => model.data?.world?.saveData ?? {})
 const equipment = computed(
   () => model.data?.world?.player?.inventory?.equipment
 )
+const stash = computed(() => model.data?.world?.inventory?.stash)
 const output = computed(
   () => 'data:text/plain;charset=utf-8,' + encodeURIComponent(save(model.data))
 )
@@ -67,6 +70,7 @@ const output = computed(
           </v-col>
           <v-col cols="12" xxl="4" xl="4" lg="4" md="5" sm="12">
             <PlayerEquipment :equipment="equipment" />
+            <PlayerStash :equipment="stash" />
           </v-col>
         </v-row>
       </v-container>
