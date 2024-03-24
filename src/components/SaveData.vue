@@ -6,7 +6,12 @@ const saveData = defineModel()
 function updater(key, e) {
   saveData.value.h[key] = e
 }
-const keys = computed(() => Object.keys(saveData.value?.h ?? {}).sort())
+const keys = computed(() => {
+  var out = Object.keys(saveData.value?.h ?? {}).sort((a, b) =>
+    a.toLowerCase() < b.toLowerCase() ? -1 : 1
+  )
+  return out
+})
 
 function getVal(key) {
   return saveData.value.h[key]
