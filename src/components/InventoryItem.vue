@@ -29,7 +29,7 @@ const menu = ref(false)
       </v-sheet>
     </template>
     <template v-slot:default="{}">
-      <v-card>
+      <v-card style="min-width: 300px">
         <v-card-text>
           <v-row dense>
             <v-col>
@@ -37,7 +37,7 @@ const menu = ref(false)
             </v-col>
             <v-col cols="3">
               <v-text-field
-                v-model="item.quality"
+                v-model.number="item.quality"
                 label="Quality"
                 type="number"
                 :min="0"
@@ -51,7 +51,7 @@ const menu = ref(false)
             </v-col>
             <v-col cols="3">
               <v-text-field
-                v-model="item.meld.quality"
+                v-model.number="item.meld.quality"
                 label="Quality"
                 type="number"
                 :min="0"
