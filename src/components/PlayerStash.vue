@@ -64,6 +64,7 @@ const pagedEq = computed(
   border: solid 1px #222;
   border-radius: 10%;
   transition: background-color 250ms linear;
+  height: 72px;
 }
 .eqslot:hover,
 .eqslot:has([aria-expanded='true']) {

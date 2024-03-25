@@ -27,7 +27,7 @@ const keys = computed(() => {
       <v-text-field label="Filter" variant="underlined" v-model="query" />
       <v-sheet
         class="overflow-auto d-flex flex-wrap justify-space-between"
-        style="max-height: 654px"
+        style="max-height: 609px"
       >
         <template v-for="key in keys" :key="key">
           <v-text-field
